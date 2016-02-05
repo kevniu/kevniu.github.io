@@ -1,0 +1,32 @@
+.post-content {
+  padding-top: 50px;
+}
+
+.bottom-nav {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.bottom-nav a {
+  color: black;
+  text-decoration: none;
+  font-family: Helvetica;
+}
+
+.bottom-nav a:hover {
+  text-decoration: underline;
+  color: gray;
+}
+
+.bottom-nav a:visited {
+  color: black;
+}
+
+.prev {
+  margin-left: 200px;
+}
+
+.next {
+  float: right;
+  margin-right: 200px;
+}

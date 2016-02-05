@@ -1,0 +1,194 @@
+body {
+  height: auto;
+  min-height: 100%;
+}
+
+/* NAVIGATION BAR */
+nav {
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: white;
+  border-bottom: 1px solid gray;
+  display: inline;
+  z-index: 1;
+}
+
+nav ul {
+  text-align: center;
+  margin-top: 20px;
+}
+
+nav li {
+  display: inline-block;
+  margin: 0;
+}
+
+nav a {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: Arial;
+  font-size: 14px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+/* NAVIGATION PSUEDO LINK SYTLES */
+nav a:link {
+  color: black;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+nav a:visited {
+  color: black;
+}
+/* CONTAINER */
+.container {
+  height: auto;
+  min-height: 100%;
+}
+
+
+/* HOME PAGE ABOUT ME SECTION */
+section {
+  font-family: Arial;
+  font-size: 14px;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+.home {
+  padding-top: 10%;
+  text-align: center;
+}
+
+.home h3 {
+
+}
+
+.home img {
+  border-radius: 100px;
+}
+
+.home p {
+  margin-bottom: 20px;
+}
+
+.home a {
+  border: 1px solid black;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: black;
+}
+
+.home a:hover {
+  border: 1px solid gray;
+  color: gray;
+}
+
+.home a:visited {
+  border: 1px solid black;
+}
+
+/* SOCIAL MEDIA LINK ICONS */
+.social {
+  margin-top: 20px;
+  position: static;
+}
+
+.social ul {
+  text-align: center;
+  margin-top: 20px;
+  padding: 0;
+}
+
+.social li {
+  display: inline;
+}
+
+.social img {
+  height: 30px;
+}
+
+#space {
+  margin: 12%;
+}
+/* BLOG INDEX FORMAT */
+#blog-header {
+  position: relative;
+  padding-top: 50px;
+  text-align: center;
+}
+
+.blog-index a:link {
+  color: gray;
+  text-decoration: none;
+}
+
+.blog-index a:hover {
+  text-decoration: underline;
+}
+
+.blog-index a:visited {
+  color: gray;
+}
+
+/* RSS */
+.rss a {
+  color: gray;
+  text-decoration: none;
+}
+
+.rss a:hover {
+  text-decoration: underline;
+}
+
+.rss a:visited {
+  color: gray;
+}
+
+/* FOOTER */
+footer {
+  position: relative;
+  clear: both;
+  border-top: 1px solid gray;
+  width: 100%;
+  height: 50px;
+  font-size: 14px;
+  bottom: 0;
+  font-family: Helvetica;
+  text-align: center;
+  margin-top: 50px;
+}
+
+footer p {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+footer a {
+  margin-right: 10px;
+  position: relative;
+  font-family: Helvetica;
+  float: right;
+  color: black;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+footer a:visited {
+  color:black;
+}
