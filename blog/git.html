@@ -1,16 +1,24 @@
 <!DOCTYPE html>
-<head>
-  <title>Your page title here</title>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="your-stylesheet-link-here.css">
-</head>
-<body>
-  <main>
-    <h1>Kevin Niu's Coding Blog</h1>
+<html>
+  <head>
+    <title>Your page title here</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+  </head>
+  <body>
+  <nav>
+    <ul>
+      <li><a href="http://kevniu.github.io/index.html">HOME</a></li>
+      <li><a href=#>PROJECTS</a></li>
+      <li><a href="http://kevniu.github.io/blog/index.html">BLOG</a></li>
+      <li><a href="mailto:kev.niu@gmail.com">CONTACT</a></li>
+    </ul>
+  </nav>
+  <div class="container">
+  <section class="post-content">
     <h2>Getting Acquainted with Git and GitHub</h2>
     <h4>January 21, 2016</h4>
-
-    <section>
       <p>
         The most important concepts we learned this week were version control and how Git and GitHub works, all super handy tools. Version control keeps track of your files and all the changes you've made and when you made them. So if you screw up, you can just go back to an earlier version of the file before things started going downhill. These different saved versions of your file are called a commit; you can think of them as a snapshot in time of your code. A good analogy, would be a checkpoint in a video game, if you die or fail in the middle of a video game, you can just go back to your last save point or in our case the last commit and proceed from there.
       </p>
@@ -26,9 +34,16 @@
 
         <!-- copy and paste as many sections as you want to add paragraphs -->
       </section>
-    </main>
-  </body>
-  </html>
-
-Status API Training Shop Blog About Pricing
-© 2016 GitHub, Inc. Terms Privacy Security Contact Help
+    <div class="bottom-nav">
+      <a href="#" class="prev"> < Previous </a>
+      <a href="#" class="next"> Next > </a>
+    </div>
+  </div>
+  <footer>
+    <p>&copy Kevin Niu 2016</p>
+  </footer>
+  <!-- FUTURE RSS ICON
+  <a href="#" class="RSS">RSS</a>
+  -->
+</body>
+</html>
