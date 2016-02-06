@@ -23,10 +23,27 @@
 }
 
 .prev {
-  margin-left: 200px;
+  margin-left: 250px;
 }
 
 .next {
   float: right;
-  margin-right: 200px;
+  margin-right: 250px;
+}
+
+#fixed-screen {
+  display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+#relative-screen {
+  position: relative;
+  left: 150px;
+}
+
+#absolute-screen {
+  position: relative;
+  left: 150px;
 }

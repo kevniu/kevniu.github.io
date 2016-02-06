@@ -29,7 +29,7 @@ nav li {
 nav a {
   text-transform: uppercase;
   text-decoration: none;
-  font-family: Arial;
+  font-family: Helvetica, Arial, sans-serif;
   font-size: 14px;
   padding-left: 40px;
   padding-right: 40px;
@@ -56,10 +56,10 @@ nav a:visited {
 
 /* HOME PAGE ABOUT ME SECTION */
 section {
-  font-family: Arial;
-  font-size: 14px;
-  margin-left: 200px;
-  margin-right: 200px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  margin-left: 250px;
+  margin-right: 250px;
 }
 
 .home {
@@ -129,30 +129,17 @@ section {
   text-align: center;
 }
 
-.blog-index a:link {
+/* FORMAT LINKS */
+#index-content a:link {
   color: gray;
   text-decoration: none;
 }
 
-.blog-index a:hover {
+#index-content a:hover {
   text-decoration: underline;
 }
 
-.blog-index a:visited {
-  color: gray;
-}
-
-/* RSS */
-.rss a {
-  color: gray;
-  text-decoration: none;
-}
-
-.rss a:hover {
-  text-decoration: underline;
-}
-
-.rss a:visited {
+#index-content a:visited {
   color: gray;
 }
 
@@ -191,4 +178,17 @@ footer a:hover {
 
 footer a:visited {
   color:black;
+}
+
+code {
+  font-size: 15px;
+  border: 1px solid #C2C2C2;
+  border-radius: 3px;
+  background-color: #D2D2D2;
+  font-family: monospace;
+  color: #22211F;
+}
+
+code {
+  padding: 1px 5px;
 }
