@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kevin Niu's Coding Blog</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+  </head>
+  <body>
+  <nav>
+    <ul>
+      <li><a href="http://kevniu.github.io/index.html">HOME</a></li>
+      <li><a href=#>PROJECTS</a></li>
+      <li><a href="http://kevniu.github.io/blog/index.html">BLOG</a></li>
+      <li><a href="mailto:kev.niu@gmail.com">CONTACT</a></li>
+    </ul>
+  </nav>
+  <div class="container">
+  <section class="post-content">
+    <h2>Arrays and Hashes</h2>
+    <h4>February 11, 2016</h4>
+      <p>
+        This week we started delving into Ruby at DBC, it's been awhile for me since I looked at Ruby material so it's been a great refresher. This blog post aims to introduce the concepts of arrays and hashes and looks at the differences between the two. To get us started, arrays and hashes are easily thought of as collections used to store and retrieve or look up data.
+      </p>
+      <p>
+        Arrays are basically lists, they are a collection of data in an ordered format. The list is organized by an array index comprised of integers. This array index number starts from 0 and counts up by 1 for every new list item in the array. So the first item in your array will have an index of 0, and the second item will have an index of 1, and so on and so forth. Below is an example of an initialized array called foods that contains 4 strings.
+      </p>
+      <pre>
+        <code>
+        foods = ['cheeseburger', 'pizza', 'salad', 'sushi']
+        #an array called 'foods' holding 4 strings
+
+        puts foods[0]  #=> 'cheeseburger'
+        puts foods[1]  #=> 'pizza'
+        puts foods[2]  #=> 'salad'
+        puts foods[3]  #=> 'sushi'
+        print fruits    #=> 'cheeseburger, pizza, salad, sushi'
+        </code>
+      </pre>
+      <p>
+        You can see how indexing works in the example above. So say we reference the index at slot 0, we get the string associated at that index which is 'cheeseburger'. Arrays can be comprised of any number of objects, including integers and even other arrays which would look something like this <code>[[1,2], [3, 4]]</code>. You can also create an empty array like so: <code>data = []</code>. I should note that there are also a number of ways you can create an array, some examples are below.
+      </p>
+      <pre>
+        <code>
+        Array.new                     # an empty, unnamed array, similar to using []
+        Array.new(20)                 # an unnamed array with a size of 20 elements
+        stuff = Array.new             # an empty array called 'stuff'
+        stuff = Array.new(10)         # an array called 'stuff' with 10 elements
+        nums = Array[1, 2, 3, 4, 5]   # an array called nums with 5 integers
+        </code>
+      </pre>
+      <p>
+        Hashes can be thought of as a collections of pairs of information. Each pair is made up of a key and a corresponding value. The key must be unique, it's used to return the value paired to it. They are similar to arrays in that they are both collections of objects, but they differ in the way they are organized. Instead of using an integer-index, hashes use any kind of object called keys that refer to a corresponding value. Hashes can be created by using two curly braces i.e. <code>data = {}</code> This would generate an empty hash. The example below shows an example of a populated hash.
+      </p>
+      <pre>
+        <code>
+        #create a mapping of some states to their respective capitals
+        capitals = {
+        'California' => 'Sacramento',
+        'Texas' => 'Austin',
+        'New York' => 'Albany',
+        'Alaska' => 'Juneau',
+        'Hawaii' => 'Honolulu'
+        }
+        </code>
+      </pre>
+      <p>
+        Here the states are the 'keys' while the capitals are the 'values.' We can retrieve values from a hash by using the [ ] operator and enclosing the key within it. So for example, if we wanted to find out what the capital of California was, we would type in <code>capitals['California']</code> and the hash would return 'Sacramento'. There are a number of ways you can create hashes i.e. <code>data = Hash.new</code> is another way. For the purposes of this post, we won't cover all of them here. Hopefully, you found this useful as an introduction to arrays and hashes. Happy coding!
+      </p>
+        <!-- copy and paste as many sections as you want to add paragraphs -->
+      </section>
+    <div class="bottom-nav">
+      <a href="#" class="prev"> < Previous </a>
+      <a href="http://kevniu.github.io/blog/css-concepts.html" class="next"> Next > </a>
+    </div>
+  </div>
+  <footer>
+    <p>&copy Kevin Niu 2016</p>
+  </footer>
+  <!-- FUTURE RSS ICON
+  <a href="#" class="RSS">RSS</a>
+  -->
+</body>
+</html>

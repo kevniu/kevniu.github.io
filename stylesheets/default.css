@@ -187,8 +187,6 @@ code {
   background-color: #D2D2D2;
   font-family: monospace;
   color: #22211F;
-}
-
-code {
   padding: 1px 5px;
+  border-radius: 4px;
 }
