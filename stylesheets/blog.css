@@ -47,3 +47,8 @@
   position: relative;
   left: 150px;
 }
+
+pre code {
+  display: block;
+  white-space: pre;
+}
