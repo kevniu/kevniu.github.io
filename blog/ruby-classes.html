@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kevin Niu's Coding Blog</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+  </head>
+  <body>
+  <nav>
+    <ul>
+      <li><a href="http://kevniu.github.io/index.html">HOME</a></li>
+      <li><a href=#>PROJECTS</a></li>
+      <li><a href="http://kevniu.github.io/blog/index.html">BLOG</a></li>
+      <li><a href="mailto:kev.niu@gmail.com">CONTACT</a></li>
+    </ul>
+  </nav>
+  <div class="container">
+  <section class="post-content">
+    <h2>Introduction to Ruby Classes</h2>
+    <h4>February 26, 2016</h4>
+      <p>
+        Ruby is an object-oriented programming language meaning that much of it centers around defining and manipulating objects. Sometimes we may want to categorize objects to more easily identify them. We do this by creating classes. Classes can be thought of as the blueprint from which individual objects are created.
+      </p>
+      <p>
+        Let's delve into classes a bit more by creating a class call Dog. The example below shows us how to do that. A dog can have certain attributes such as a name and breed. We can set these attributes as instance variables denoted with an @ symbol. Instance variables are different from local variables in that you can access instance variables from other methods in the class. These variables are initialized in the <code>initialize</code> method. That means that as soon as we create our new dog, it will have a name and breed. I gave it a breed of Shiba Inu (I always wanted one :P) and named him Hachi after that wonderful, loyal dog from the Japanese story.
+      </p>
+      <pre>
+        <code>
+
+          class Dog
+
+            def initialize(name, breed)
+              @name = name
+              @breed = breed
+            end
+
+            def name
+              @name
+            end
+
+            def breed
+              @breed
+            end
+
+          end
+
+          #creates a new dog object with name: Hachi and breed: Shiba Inu
+          doggy = Dog.new("Hachi", "Shiba Inu")
+          puts "Name: #{doggy.name}"
+          puts "Breed: #{doggy.breed}"
+
+          #Output
+          => Name: Hachi
+          => Breed: Shiba Inu
+
+        </code>
+      </pre>
+      <p>
+        We can see that a lot of this code looks quite repetitive and that's never good practice with Ruby, so how do we clean it up and simplify it you ask? We can use an attribute. An attriubte is a property of an object whose value can be read through the object. In the example below, we can replace name and breed with an attribute reader to simplify the code.
+      </p>
+      <pre>
+        <code>
+
+          class Dog
+
+            attr_reader :name, :breed
+
+            def initialize(name, breed)
+              @name = name
+              @breed = breed
+            end
+
+          end
+
+            #attr_reader :name replaces the code below
+            # def name
+            #   @name
+            # end
+
+            #attr_reader :breed replaces the code below
+            # def breed
+            #   @breed
+            # end
+
+        </code>
+      </pre>
+      <p>
+        Let's give our dog some more behavioral functions so that we can interact with it some more. Below I added a fetch and an eat method to the class above along with a couple more instance variables and a status method.
+      </p>
+      <pre>
+        <code>
+
+          class Dog
+
+            attr_reader :name, :breed
+
+            def initialize(name, breed)
+              @name = name
+              @breed = breed
+              @healthy = false
+              @happy = false
+            end
+
+            def fetch
+              puts "#{@name} is no longer sad."
+              @happy = true
+            end
+
+            def eat
+              puts "#{@name} is no longer hungry."
+              @healthy = true
+            end
+
+            def status
+              puts "#{@name} looks happy and healthy." if (@healthy == false) && (@happy == false)
+              puts "#{@name} looks hungry."if (@healthy == false)
+              puts "#{@name} looks sad."  if (@happy == false)
+            end
+
+          end
+
+        </code>
+      </pre>
+      <p>
+        We can see below how we can use these methods below to tell our dog to fetch and eat.
+      </p>
+      <pre>
+        <code>
+
+          doggy = Dog.new("Hachi", "Shiba Inu")
+
+          doggy.fetch
+          Hachi is no longer bored.
+          => true
+
+          doggy.eat
+          Hachi is no longer hungry.
+          => true
+
+          doggy.status
+          Hachi looks happy and healthy.
+          => nil
+
+        </code>
+      </pre>
+      <p>
+        Classes can be used to represent any collection of things - people, things, food, etc. Think about what attributes and behaviors those objects exhibit. The instance variables are like the attributes of the object while the methods are like the behaviors of the object. Try it out for yourself and see what kinds of real world objects you can model your classes after. Happy Coding!
+      </p>
+        <!-- copy and paste as many sections as you want to add paragraphs -->
+      </section>
+    <div class="bottom-nav">
+      <a href="#" class="prev"> < Previous </a>
+      <a href="http://kevniu.github.io/blog/enumerable-methods.html" class="next"> Next > </a>
+    </div>
+  </div>
+  <footer>
+    <p>&copy Kevin Niu 2016</p>
+  </footer>
+  <!-- FUTURE RSS ICON
+  <a href="#" class="RSS">RSS</a>
+  -->
+</body>
+</html>
