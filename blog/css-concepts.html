@@ -26,16 +26,21 @@
       <p>
         Elements given a <b>fixed</b> position value are completely independent of everythign else on the web page and will always be positioned based on the browser viewport. It's often used to create a floating element that stays in the same position on the page no matter how far down you scroll. You can see in the pictures below that box "One" given a <code>position: fixed</code> stays in the same place, even after scrolling from the top to the bottom of the page.
       </p>
-      <img src="../imgs/screenshot-fixed-css.png"/>
-      </p>
+      <div class="blog-img">
+        <img src="../imgs/screenshot-fixed-css.png"/>
+      </div>
       <p>
         <b>Relative</b> positioning allows you to move an element without disrupting the normal flow of a page. The element moves <em>relative</em> to its default static positioning. Using the properties of top, right, bottom, and left we can position the element from its default position. In the image, below we have four boxes that are displayed-inline. I changed box "Two" to be <code>position: relative</code> and adjusted <code>top: 20px</code> and <code>left: 20px</code> from its original position. Notice that the other elements are still displayed as if "Two" was still in its original place.
       </p>
+      <div class="blog-img">
       <img src="../imgs/screenshot-relative-css.png"/>
+      </div>
       <p>
         In contrast to relative positioning, <b>absolute</b> positioning takes the element out of normal flow which allows us to move that element anywhere on the page. An element that is positioned absoltuely does not take up any space when placing other elements, almost as if the element doesn't exist. In the image below, I gave box "Two" the same <code>top: 20px</code> and <code>left: 20px</code> as in the example above, but changed <code>position: relative</code> to <code>position: absolute</code>.
       </p>
+      <div class="blog-img">
       <img src="../imgs/screenshot-absolute-css.png"/>
+      </div>
       <p>
         As you can see, box "Two" now overlaps with other elements on the rest of the page and box "Three" and "Four" now shift over to the left on the inline block as if box "Two" never existed. The position of aboslute elements is determined by it parent elements. If all the parent elements are static, or in this case: there are none, then the element is positioned based on the body of the page. Hopefully, you found this post useful in getting introduced to positiong with CSS.
       </p>

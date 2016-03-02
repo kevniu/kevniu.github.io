@@ -52,10 +52,14 @@ ul a {
 /* POSTS */
 pre code {
   display: block;
-  white-space: pre;
+  white-space: pre-wrap;
 }
 
 img {
   vertical-align: middle;
   max-width: 100%;
+}
+
+.blog-img {
+  text-align: center;
 }
