@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kevin Niu's Coding Blog</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+  </head>
+  <body>
+  <nav>
+    <ul>
+      <li><a href="http://kevniu.github.io/index.html">HOME</a></li>
+      <li><a href="http://kevniu.github.io/projects/index.html">PROJECTS</a></li>
+      <li><a href="http://kevniu.github.io/about.html">ABOUT</a></li>
+      <li><a href="http://kevniu.github.io/blog/index.html">BLOG</a></li>
+      <li><a href="mailto:kev.niu@gmail.com">CONTACT</a></li>
+    </ul>
+  </nav>
+  <div class="post">
+  <article class="blog-content">
+    <h1>Introduction to Recursion</h1>
+    <p class="date">March 9, 2016</p>
+      <p>
+        Recursion is an awesome programming tool. It provides a simple and powerful way to approach many problems. A basic definition of recursion is the process of repeating items in a self-similar way. This definition probably isn't the most helpful so let's take a look at the movie Inception to gain a general understanding of the concept. In the movie, Cobb (Leo's character) and his team enter someone's dream to incept an idea into their subconscious. If they feel like they are not deep enough inside the person's subconscious, they enter a person's dream within a dream. And will continue to enter a dream within a dream until they are deep enough inside the subconcious to accomplish their goal. This is the general idea behind recursion.
+      </p>
+      <p>
+        In programming, a function or method is said to be recursive if it calls upon itself. As long as some condition is met, the function or method will continue to call itself within itself. When that conditions is not met or validates to false, the function will stop calling itself and break from the loop. This puts a great emphasis on the stop condition, otherwise you end up with an infinite loop. One must be careful when writing the input of the recursively-summoned method as it must be able to tell which iteration or layer it is on. This means that the input to the recursively called method needs to have a different input than the original input of the method. Otherwise you would never be able to get out of the recursion.
+      </p>
+      <p>
+        A good example to demonstrate of how recursion could simplify your programming solution is with calculating factorials. A factorial is a simple mathematical operation. They are denoted with an exclamation mark (i.e. 4! means 4 x 3 x 2 x 1 = 24). In general, n! means the product of all the whole numbers from 1 to n. Below are examples showing a Ruby solution for a factorial method along, one without recursion and one with.
+      </p>
+      <pre>
+        <code>
+
+          def factorial(num)
+            return 1 if num == 0
+
+            factorial = num
+            next_num = num - 1
+            while next_num >= 2
+              factorial *= next_num
+              next_num -= 1
+            end
+            return factorial
+          end
+
+        </code>
+      </pre>
+      <p>Here's a Ruby solution for a factorial method using recursion:</p>
+      <pre>
+        <code>
+
+          def factorial(num)
+            if num == 0
+              return 1
+            else
+              return num * factorial(num - 1)
+            end
+          end
+
+        </code>
+      </pre>
+      <p>
+        You can see that the function proceeds to call upon itself if num does not equal 0. Please note that when the function is called inside itself, its argument is different than the first solution. The argument here is num - 1, so that the code knows to iterate to the next lowest number the next time it runs. The code will then continue to loop, passing in the next lower whole number until zero is reached, in which case it will return 1. If we did change the argument, and left num as the argument in the recursion call, the code would get stuck in an infinite loop.
+      </p>
+      <p>
+        Pretty cool stuff right? Recursion can be applied to many problems but it tends to be more useful more for complex situations as sometimes using it could actually make your solution less efficient. In general, code written recursively is shorter and a little more elegant once you understand how to read it. Give it a try yourself, and I'm sure you'll start to see how it can be useful to implement in your own code.
+      </p>
+        <!-- copy and paste as many sections as you want to add paragraphs -->
+    </article>
+    <div class="bottom-nav">
+      <a href="#" class="prev"> < Previous </a>
+      <a href="http://kevniu.github.io/blog/javascript.html" class="next"> Next > </a>
+    </div>
+  </div>
+  <footer>
+    <p>&copy 2016 Kevin Niu</p>
+  </footer>
+  <!-- FUTURE RSS ICON
+  <a href="#" class="RSS">RSS</a>
+  -->
+</body>
+</html>
