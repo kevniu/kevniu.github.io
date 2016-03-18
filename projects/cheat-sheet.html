@@ -1,275 +1,147 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
+    <title>Enumerable Cheat Sheet</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="../stylesheets/cheat-sheet.css">  <!-- Insert a link to the stylesheet here -->
-    <title>Git Cheat Sheet</title>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/cheat-sheet.css">
   </head>
-
   <body>
-      <header class="container border-rds">
-      <section class="clear">
-      <img src="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png" alt="octocat picture" class="image-width display-in-b">
-      <h1 class="display-in-b">GitHub: Git Cheat Sheet</h1>
-      </section>
-      <p class="clear">Git is the open source distributed version control system that
-        facilitates GitHub activities on your laptop or desktop.
-        This cheat sheet summarizes commonly used Git command line
-        instructions for quick reference.</p>
-      </header>
+  <nav>
+    <ul>
+      <li><a href="http://kevniu.github.io/index.html">HOME</a></li>
+      <li><a href="http://kevniu.github.io/projects/index.html">PROJECTS</a></li>
+      <li><a href="http://kevniu.github.io/about.html">ABOUT</a></li>
+      <li><a href="http://kevniu.github.io/blog/index.html">BLOG</a></li>
+      <li><a href="mailto:kev.niu@gmail.com">CONTACT</a></li>
+    </ul>
+  </nav>
+  <div class="post">
+  <article class="blog content">
+    <h1>Enumerables Methods Cheat Sheet</h1>
+      <p class="method">map & collect</p>
+      <p>
+        Returns a new array with data collected from the block that was ran. If a block is not given, it will return an enumerator instead.
+      </p>
+      <pre>
+        <code>
 
-  <main class="container border-rds">
-    <section class="column-1 border-rds">
-      <article>
-        <h2>INSTALL GIT</h2>
-        <p>GitHub provides desktop clients that include a graphical user
-        interface for the most common repository actions and an automatically
-        updating command line edition of Git for advanced scenarios.</p>
-        <ul>
-          <li><a href="https://windows.github.com">GitHub for Windows</a></li>
-          <li><a href="https://mac.github.com">GitHub for Mac</a></li>
-          <li><a href="http://git-scm.com">Git for All Platforms</a></li>
-        </ul>
+        (1..4).map { |num| num * num } #=> [1, 4, 9, 16]
+        (1..2).collect { "abc" }       #=> ["abc", "abc"]
 
-        Git distributions for Linux and POSIX systems are available on the
-        official Git SCM web site.
+        </code>
+      </pre>
+      <p class="method">count</p>
+      <p>
+        Count returns the number of items in enums. If given an argument, the number of items that are equal to the argument are counted. When given a block all items yielding a true value are counted.
+      </p>
+      <pre>
+        <code>
+
+          nums = [1, 2, 3, 4, 2]
+
+          nums.count #=> 5
+          nums.count(2) #=> 2
+          nums.count{|i| i % 2 == 0} #=> 3
+
+        </code>
+      </pre>
+      <p class="method">cycle</p>
+      <p>
+        Calls block for each element of enums. If no argument is given, cycle will continue forever.
+      </p>
+      <pre>
+        <code>
+
+          arr = ["a","b"]
+
+          arr.cycle {|x| puts x}    #=> a, b, a, b... #forever
+          arr.cycle(2) {|x| puts x} #=> a, b, a, b
+
+        </code>
+      </pre>
+      <p class="method">drop</p>
+      <p>
+        Drops elements from enums, and returns the rest in an array.
+      </p>
+      <pre>
+        <code>
+
+          nums = [1, 2, 3, 4, 5, 6]
+          nums.drop(3) #=> [4, 5, 6]
+
+        </code>
+      </pre>
+      <p class="method">each_slice</p>
+      <p>
+        Iterates the given block for each slice. Takes an argument for number of items in slice.
+      </p>
+      <pre>
+        <code>
+
+          (1..10).each_slice(3) {|slice| puts slice}
+          # output
+          [1, 2, 3]
+          [4, 5, 6]
+          [7, 8, 9]
+          [10]
+
+        </code>
+      </pre>
+      <p class="method">first</p>
+      <p>
+        Returns the first element, or first nth elements of enumerable.
+      </p>
+      <pre>
+        <code>
+
+          arr = ['a', 'b', 'c']
+          arr.first #=> ['a']
+          arr.first(2) #=> ['a', 'b']
+          arr.first(4) #=> ['a', 'b', 'c']
+
+        </code>
+      </pre>
+      <p class="method">partition</p>
+      <p>
+        Partition returns two arrays, the first contains the true values from evaluated block and the second contains the rest.
+      </p>
+      <pre>
+        <code>
+
+          (1..6).partition {|num| num.even? }
+          #=> [[2, 4, 6], [1, 3, 5]]
+
+        </code>
+      </pre>
+      <p class="method">reject</p>
+      <p>
+        Returns an array for all elements that return false.
+      </p>
+      <pre>
+        <code>
+
+          (1..10).reject {|num| num.even?}
+          #=> [1, 3, 5, 7, 9]
+
+        </code>
+      </pre>
+      <p class="method">select</p>
+      <p>
+        Returns an array containing all elements of enum for which the block returns true.
+      </p>
+      <pre>
+        <code>
+
+          [1, 2, 3, 4, 5].select {|num| num.even?}
+          #=> [2, 4]
+
+        </code>
+      </pre>
+        <!-- copy and paste as many sections as you want to add paragraphs -->
       </article>
-
-      <article>
-        <h2>CONFIGURE TOOLING</h2>
-        <p>Configure user information for all local repositories</p>
-        <p> To see a summary of each command, click it.</p>
-
-        <details>
-          <summary><code>$ git config --global user.name "[name]"</code></summary>
-          <p>Sets the name you want attached to your commit transactions</p>
-        </details>
-
-        <details>
-          <summary><code>$ git config --global user.email "[email address]"</code></summary>
-          <p>Sets the email you want atached to your commit transactions</p>
-        </details>
-
-        <details>
-          <summary><code>$ git config --global color.ui auto</code></summary>
-          <p>Enables helpful colorization of command line output</p>
-        </details>
-      </article>
-
-      <article>
-        <h2>CREATE REPOSITORIES</h2>
-        <p>Start a new repository or obtain one from an existing URL</p>
-
-        <details>
-          <summary><code>$ git init [project-name]</code></summary>
-          <p>Creates a new local repository with the specified name</p>
-        </details>
-
-        <details>
-          <summary><code>$ git clone [url]</code></summary>
-          <p>Downloads a project and its entire version history</p>
-        </details>
-      </article>
-
-      <article>
-        <h2>MAKE CHANGES</h2>
-        <p>Review edits and craft a commit transaction</p>
-
-        <details>
-          <summary><code>$ git status</code></summary>
-          <p>Lists all new or modified files to be committed</p>
-        </details>
-
-        <details>
-          <summary><code>$ git add [file]</code></summary>
-          <p>Snapshots the file in preparation for versioning</p>
-        </details>
-
-        <details>
-          <summary><code>$ git reset [file]</code></summary>
-          <p>Unstages the file, but preserve its contents</p>
-        </details>
-
-        <details>
-          <summary><code>$ git diff</code></summary>
-          <p>Shows file differences not yet staged</p>
-        </details>
-
-        <details>
-          <summary><code>$ git diff --staged</code></summary>
-          <p>Shows file differences between staging and the last file version</p>
-        </details>
-
-        <details>
-          <summary><code>$ git commit -m "[descriptive message]"</code></summary>
-          <p>Records file snapshots permanently in version history</p>
-        </details>
-      </article>
-
-      <article>
-        <h2>GROUP CHANGES</h2>
-        <p>Name a series of commits and combine completed efforts</p>
-
-        <details>
-          <summary><code>$ git branch</code></summary>
-          <p>Lists all local branches in the current repository</p>
-        </details>
-
-        <details>
-          <summary><code>$ git branch [branch-name]</code></summary>
-          <p>Creates a new branch</p>
-        </details>
-
-        <details>
-          <summary><code>$ git checkout [branch-name]</code></summary>
-          <p>Switches to the specified branch and updates the working directory</p>
-        </details>
-
-        <details>
-          <summary><code>$ git merge [branch]</code></summary>
-          <p>Combines the specified branch’s history into the current branch</p>
-        </details>
-
-        <details>
-          <summary><code>$ git branch -d [branch-name]</code></summary>
-          <p>Deletes the specified branch</p>
-        </details>
-      </article>
-    </section>
-
-    <section class="column-2 border-rds">
-      <article>
-        <h2>REFACTOR FILENAMES</h2>
-        <p>Relocate and remove versioned files</p>
-
-        <details>
-          <summary><code>$ git rm [file]</code></summary>
-          <p>Deletes the file from the working directory and stages the deletion</p>
-        </details>
-
-        <details>
-          <summary><code>$ git rm --cached [file]</code></summary>
-          <p>Removes the file from version control but preserves the file locally</p>
-        </details>
-
-        <details>
-          <summary><code>$ git mv [file-original] [file-renamed]</code></summary>
-          <p>Changes the file name and prepares it for commit</p>
-        </details>
-      </article>
-
-      <article>
-        <h2>SUPPRESS TRACKING</h2>
-        <p>Exclude temporary files and paths</p>
-
-        <details>
-          <summary><code>*.log
-                    build/
-                    temp-*
-          </code></summary>
-          <p>A text file named .gitignore suppresses accidental versioning of files and paths matching the specified paterns</p>
-        </details>
-
-        <details>
-          <summary><code>$ git ls-files --other --ignored --exclude-standard</code></summary>
-          <p>Lists all ignored files in this project</p>
-        </details>
-      </article>
-
-      <article>
-        <h2>SAVE FRAGMENTS</h2>
-        <p>Shelve and restore incomplete changes</p>
-
-        <details>
-          <summary><code>$ git stash</code></summary>
-          <p>Temporarily stores all modified tracked files</p>
-        </details>
-
-        <details>
-          <summary><code>$ git stash list</code> Lists all stashed changesets</summary>
-          <p></p>
-        </details>
-
-        <details>
-          <summary><code>$ git stash pop</code></summary>
-          <p>Restores the most recently stashed files</p>
-        </details>
-
-        <details>
-          <summary><code>$ git stash drop</code></summary>
-          <p>Discards the most recently stashed changeset</p>
-        </details>
-
-      </article>
-
-      <article>
-        <h2>REVIEW HISTORY</h2>
-        <p>Browse and inspect the evolution of project files</p>
-
-        <details>
-          <summary><code>$ git log</code></summary>
-          <p>Lists version history for the current branch</p>
-        </details>
-
-        <details>
-          <summary><code>$ git log --follow [file]</code></summary>
-          <p>Lists version history for a file, including renames</p>
-        </details>
-
-        <details>
-          <summary><code>$ git diff [first-branch]...[second-branch]</code></summary>
-          <p>Shows content differences between two branches</p>
-        </details>
-
-        <details>
-          <summary><code>$ git show [commit]</code></summary>
-          <p>Outputs metadata and content changes of the specified commit</p>
-        </details>
-      </article>
-
-      <article>
-        <h2>REDO COMMITS</h2>
-        <p>Erase mistakes and craft replacement history</p>
-
-        <details>
-          <summary><code>$ git reset [commit]</code></summary>
-          <p>Undoes all commits after [commit], preserving changes locally</p>
-        </details>
-
-        <details>
-          <summary><code>$ git reset --hard [commit]</code></summary>
-          <p>Discards all history and changes back to the specified commit</p>
-        </details>
-      </article>
-
-      <article>
-        <h2>SYNCHRONIZE CHANGES</h2>
-        <p>Register a repository bookmark and exchange version history</p>
-
-        <details>
-          <summary><code>$ git fetch [bookmark]</code></summary>
-          <p>Downloads all history from the repository bookmark</p>
-        </details>
-
-        <details>
-          <summary><code>$ git merge [bookmark]/[branch]</code></summary>
-          <p>Combines bookmark’s branch into current local branch</p>
-        </details>
-
-        <details>
-          <summary><code>$ git push [alias] [branch]</code></summary>
-          <p>Uploads all local branch commits to GitHub</p>
-        </details>
-
-        <details>
-          <summary><code>$ git pull</code></summary>
-          <p>Downloads bookmark history and incorporates changes</p>
-        </details>
-      </article>
-    </section>
-</main>
-<footer class="container clear border-rds">
-  This information is copied directly from <a href="https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf">GitHub's Training Cheatsheet</a>.
-</footer>
-  </body>
+  </div>
+  <footer>
+    <p>&copy 2016 Kevin Niu</p>
+  </footer>
+</body>
 </html>
