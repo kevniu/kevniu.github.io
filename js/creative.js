@@ -45,7 +45,7 @@
         distance: '0px'
     }, 300);
 
-    // Initialize and Configure Magnific Popup Lightbox Plugin
+    // // Initialize and Configure Magnific Popup Lightbox Plugin
     $('.popup-gallery').magnificPopup({
         delegate: 'a',
         type: 'image',
